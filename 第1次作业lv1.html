@@ -1,0 +1,145 @@
+<!-- 前半做的时候按照其他的样式来了……发现和作业里的效果图不一样的时候已经来不及改了（滑跪） -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度一下，你就知道</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <style>
+        #top_left {
+            /* position: absolute; */
+            padding-top: 19px;
+            padding-left: 24px;
+        }
+
+        #logo {
+            margin-top: 50px;
+        }
+
+        #logo,
+        #search {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 443px;
+            height: 16px;
+            padding: 12px 16px;
+            border: 2.400px solid #ccc;
+            border-right: none;
+            margin-top: 10px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border: 2.400px solid rgb(78, 110, 242);
+            border-right: none;
+        }
+
+        button {
+            height: 44px;
+            width: 108px;
+            padding-bottom: 2.5px;
+            margin-top: 10px;
+            border: 1.600px solid rgb(78, 110, 242);
+            background-color: rgb(78, 110, 242);
+            color: #fff;
+            border-radius: 0 10px 10px 0;
+            font-size: 16px;
+        }
+    </style>
+    <style>
+        #top_wrap a:link {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        #top_wrap a:hover {
+            color: #0000FF;
+        }
+
+        #top_wrap a {
+            padding-right: 19px;
+        }
+
+        span a:link {
+            color: #999;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
+    <style>
+        #bottom {
+            margin-top: 175px;
+            text-align: center;
+        }
+
+        .grey {
+            color: #999;
+        }
+
+        #under {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <div id="top_wrap">
+            <div id="top_left">
+                <a href="http://news.baidu.com" target="_blank">新闻</a>
+                <a href="https://www.hao123.com?src=from_pc_logon" target="_blank">hao123</a>
+                <a href="http://map.baidu.com" target="_blank">地图</a>
+                <a href="http://tieba.baidu.com/" target="_blank">贴吧</a>
+                <a href="https://haokan.baidu.com/?sfrom=baidu-top" target="_blank">视频</a>
+                <a href="http://image.baidu.com/" target="_blank">图片</a>
+                <a href="https://pan.baidu.com?from=1026962h" target="_blank">网盘</a>
+                <a href="https://wenku.baidu.com/?fr=bdpcindex" target="_blank">文库</a>
+                <a href="https://chat.baidu.com/search?isShowHello=1&amp;pd=csaitab&amp;setype=csaitab&amp;extParamsJson=%7B%22enter_type%22%3A%22home_tab%22%7D"
+                    target="_blank">AI助手</a>
+                <a href="http://www.baidu.com/more/" target="_blank">更多</a>
+            </div>
+        </div>
+    </div>
+    <div id="logo">
+        <a href="http://www.baidu.com/"><img src="http://www.baidu.com/img/bd_logo1.png" alt="百度logo" title="点击一下，了解更多"
+                width="270"></a>
+    </div>
+    <div id="search">
+        <input type="text"><button>百度一下</button>
+    </div>
+    <div id="bottom">
+        <img src="img/baidu .jpg" alt="百度二维码">
+        <p>下载百度APP</p>
+        <p class="grey" id="under">有事搜一搜，没事看一看</p>
+        <p class="grey">
+            <span><a href="#">把百度作为首页</a></span>
+            <span><a href="#">关于百度</a></span>
+            <span><a href="#">About Baidu</a></span>
+            <span><a href="#">百度推广</a></span>
+        </p>
+        <p class="grey">©2019_Baidu
+            <span>
+                <a href="#" class="underline">使用百度前必读</a>
+            </span>
+            <span>
+                <a href="#" class="underline">意见反馈</a>
+            </span>
+            *********号
+        </p>
+    </div>
+</body>
+
+</html>
