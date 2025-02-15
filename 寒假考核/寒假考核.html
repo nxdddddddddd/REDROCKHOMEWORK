@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网易云音乐</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="寒假考核.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="home"><img src="img/favicon-32x32.png" alt="logo">&nbsp网易云音乐</div>
+    <ul>
+      <li data-page="recommend"><img src="icon1.png" alt="icon 1">推荐</li>
+      <li data-page="playlists"><img src="icon2.png" alt="icon 2">精选</li>
+      <li data-page="podcast"><img src="icon3.png" alt="icon 3">播客</li>
+      <li data-page="explore"><img src="icon4.png" alt="icon 4">漫游</li>
+      <li data-page="following"><img src="icon5.png" alt="icon 5">关注</li>
+    </ul>
+    <ul>
+      <li data-page="favorites"><img src="icon6.png" alt="icon 6">我喜欢的音乐<img src="icon6.5.png" alt="icon 6.5"></li>
+      <li data-page="recent"><img src="icon7.png" alt="icon 7">最近播放</li>
+      <li data-page="my-podcast"><img src="icon8.png" alt="icon 8">我的播客</li>
+      <li data-page="collections"><img src="icon9.png" alt="icon 9">我的收藏</li>
+      <li data-page="downloads"><img src="icon10.png" alt="icon 10">下载管理</li>
+      <li data-page="local"><img src="icon11.png" alt="icon 11">本地音乐</li>
+      <li data-page="cloud"><img src="icon12.png" alt="icon 12">我的音乐网盘</li>
+    </ul>
+    <ul>
+      <div>（创建的歌单）</div>
+    </ul>
+    <ul>
+      <div>（收藏的歌单）</div>
+    </ul>
+  </div>
+  <div class="page-container">
+    <div class="header">
+      <button id="backButton" class="button">&lt</button>
+      <input type="text" placeholder="搜索...">
+      <div class="tabs">
+        <div><img src="user.png" alt="user">用户头像</div>
+        <div>（用户名）</div>
+        <div><button>(下拉菜单)</button></div>
+        <div><img src="headerIcon1.png" alt="1"></div>
+        <div><img src="headerIcon2.png" alt="2"></div>
+        <div><img src="headerIcon3.png" alt="3"></div>
+        <div><img src="headerIcon4.png" alt="4"></div>
+        <div><img src="headerIcon5.png" alt="5"></div>
+      </div>
+    </div>
+    <div id="home-page" class="page active">
+      <div class="wrap1">
+        <div class="banner">（轮播图）
+          <div class="banner-imgs">
+            <!-- 动态插入11张图片 -->
+          </div>
+          <div class="banner-info">
+            <span class="dot-list">
+              <ul>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+                <li>·</li>
+              </ul>
+            </span>
+            <span class="banner-description">（独家首发）</span>
+          </div>
+        </div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div class="wrap2">
+        <button class="button">&lt</button>
+        <div class="playlists">
+          <div class="playlist">
+            <img src="#" alt="Playlist 1">
+            <div class="playlist-info">
+              <div>（播放量）</div>
+              <div>（描述）</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <img src="#" alt="Playlist 2">
+            <div class="playlist-info">
+              <div>（播放量）</div>
+              <div>（描述）</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <img src="#" alt="Playlist 3">
+            <div class="playlist-info">
+              <div>（播放量）</div>
+              <div>（描述）</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <img src="#" alt="Playlist 4">
+            <div class="playlist-info">
+              <div>（播放量）</div>
+              <div>（描述）</div>
+            </div>
+          </div>
+        </div>
+        <button class="button">></button>
+      </div>
+    </div>
+    <div id="playlist-square" class="page">
+      <div class="playlist-squareWrap1">
+        <span data-tab="featured">精选</span>
+        <span data-tab="playlists">歌单广场</span>
+        <span data-tab="rankings">排行榜</span>
+        <span data-tab="artists">歌手</span>
+        <span data-tab="vip">VIP</span>
+      </div>
+      <div class="tab-content">
+        <div id="featured" class="tab-pane active">精选内容</div>
+        <div id="playlists" class="tab-pane">
+          <div class="playlistsWrap1">
+            <button>推荐</button>
+            <button>官方</button>
+            <button>华语</button>
+            <button>摇滚</button>
+            <button>民谣</button>
+            <button>电子</button>
+            <button>轻音乐</button>
+            <button>更多分类（下拉菜单）</button>
+          </div>
+          <div class="playlistsWrap2">
+            <div class="playlists">
+              <div class="playlist">
+                <img src="#" alt="Playlist 1">
+                <div class="playlist-info">
+                  <div>（播放量）</div>
+                  <div>（描述）</div>
+                </div>
+              </div>
+              <div class="playlist">
+                <img src="#" alt="Playlist 2">
+                <div class="playlist-info">
+                  <div>（播放量）</div>
+                  <div>（描述）</div>
+                </div>
+              </div>
+              <div class="playlist">
+                <img src="#" alt="Playlist 3">
+                <div class="playlist-info">
+                  <div>（播放量）</div>
+                  <div>（描述）</div>
+                </div>
+              </div>
+              <div class="playlist">
+                <img src="#" alt="Playlist 4">
+                <div class="playlist-info">
+                  <div>（播放量）</div>
+                  <div>（描述）</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="rankings" class="tab-pane">排行榜内容</div>
+        <div id="artists" class="tab-pane">歌手内容</div>
+        <div id="vip" class="tab-pane">VIP内容</div>
+      </div>
+    </div>
+    <div id="search-page" class="page">
+
+    </div>
+  </div>
+  <div class="player">
+    <div class="player-left">
+      <img src="album-cover.jpg" alt="专辑封面" class="album-cover">
+      <div class="song-info">
+        <div class="song-name">（歌曲名称）</div>
+        <div class="song-actions">
+          <button class="like-button">❤️</button>
+          <span class="comments">（评论数）</span>
+          <button class="download-button">（下载）</button>
+          <button class="more-options-button">...</button>
+        </div>
+      </div>
+    </div>
+    <div class="player-middle">
+      <div class="middle-top">
+        <div class="play-mode-controls">
+          <button class="play-mode-button">🔄</button>
+          <button class="prev-button">&lt</button>
+          <button class="play-pause-button">▶</button>
+          <button class="next-button">></button>
+          <span>词</span>
+        </div>
+      </div>
+      <div class="middle-bottom">
+        <div class="progress-bar">
+          <div class="progress-time">00:00</div>
+          <input type="range" class="seek-bar" min="0" max="100" value="5">
+          <div class="total-time">01:55</div>
+        </div>
+      </div>
+    </div>
+    <div class="player-right">
+      <div class="quality-controls">
+        <button class="quality-button">极高</button>
+      </div>
+      <div class="sound-effects">
+        <button class="sound-effect-button">（会员音效图标）</button>
+      </div>
+      <div class="share-button">
+        <button>（开始一起听图标）</button>
+      </div>
+      <div class="volume-controls">
+        <button class="volume-button">🔊</button>
+        <div class="volume-slider" style="display: none;">
+          <input type="range" min="0" max="100" class="seek-bar">
+          <div class="slider-value">0%</div>
+        </div>
+      </div>
+      <div class="playlist-button">☰</button>
+      </div>
+    </div>
+  </div>
+  <script src="寒假考核.js"></script>
+  <audio id="audio" style="display: none;"></audio>
+</body>
+
+</html>
