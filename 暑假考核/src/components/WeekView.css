@@ -1,0 +1,368 @@
+.week-view {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: #f8f9fa;
+}
+
+.schedule-container {
+  display: flex;
+  min-width: 700px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  margin: 16px;
+}
+
+.time-column {
+  width: 70px;
+  background-color: #fafbfc;
+  border-right: 2px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.time-header {
+  height: 107px;
+  border-bottom: 2px solid #e9ecef;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  min-height: 107px;
+  max-height: 107px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-display {
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+  text-align: center;
+}
+
+.time-slot {
+  height: 107px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0;
+  background-color: #fafbfc;
+  box-sizing: border-box;
+  min-height: 107px;
+  max-height: 107px;
+}
+
+.time-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 2px;
+}
+
+.time-start {
+  font-size: 11px;
+  color: #6c757d;
+  line-height: 1.1;
+  margin-bottom: 1px;
+}
+
+.time-end {
+  font-size: 11px;
+  color: #6c757d;
+  line-height: 1.1;
+}
+
+.schedule-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.week-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 107px;
+  border-bottom: 2px solid #e9ecef;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  min-height: 107px;
+  max-height: 107px;
+}
+
+.day-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #e9ecef;
+  padding: 0;
+  box-sizing: border-box;
+  height: 107px;
+  min-height: 107px;
+  max-height: 107px;
+}
+
+.day-header:last-child {
+  border-right: none;
+}
+
+.day-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 2px;
+}
+
+.day-date {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.schedule-body {
+  flex: 1;
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 107px;
+  border-bottom: 1px solid #e9ecef;
+  min-height: 107px;
+  max-height: 107px;
+}
+
+.schedule-cell {
+  position: relative;
+  border-right: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  height: 107px;
+  min-height: 107px;
+  max-height: 107px;
+}
+
+.schedule-cell:last-child {
+  border-right: none;
+}
+
+.schedule-cell:hover:not(.occupied) {
+  background-color: #f8f9fa;
+}
+
+.schedule-cell.drag-over {
+  background-color: #e3f2fd;
+  border: 2px dashed #2196f3;
+}
+
+.schedule-cell.occupied {
+  background-color: transparent;
+  cursor: default;
+}
+
+.time-row:last-child .schedule-cell {
+  border-bottom: none;
+}
+
+.schedule-cell.selected {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+}
+
+.schedule-cell.selected:hover {
+  background-color: #e0e0e0;
+}
+
+/* 添加课程指示器 */
+.add-course-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-icon {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 课程卡片样式 */
+.course-card {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-card.draggable {
+  cursor: move;
+}
+
+.course-card.draggable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-card.non-editable {
+  cursor: default;
+  opacity: 0.9;
+}
+
+.course-card.non-editable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-name {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.course-location {
+  font-size: 10px;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.drag-handle {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  cursor: move;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .schedule-container {
+    margin: 8px;
+    min-width: 500px;
+  }
+
+  .time-column {
+    width: 50px;
+  }
+
+  .time-header {
+    height: 89px;
+    min-height: 89px;
+    max-height: 89px;
+  }
+
+  .time-slot {
+    height: 89px;
+    min-height: 89px;
+    max-height: 89px;
+    padding: 0;
+  }
+
+  .time-row {
+    height: 89px;
+    min-height: 89px;
+    max-height: 89px;
+  }
+
+  .schedule-cell {
+    height: 89px;
+    min-height: 89px;
+    max-height: 89px;
+    padding: 0;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .week-header {
+    height: 89px;
+    min-height: 89px;
+    max-height: 89px;
+  }
+
+  .day-header {
+    height: 89px;
+    min-height: 89px;
+    max-height: 89px;
+    padding: 0;
+  }
+
+  .time-label {
+    font-size: 14px;
+  }
+
+  .time-start,
+  .time-end {
+    font-size: 10px;
+  }
+
+  .day-name {
+    font-size: 12px;
+  }
+
+  .day-date {
+    font-size: 10px;
+  }
+
+  .course-name {
+    font-size: 11px;
+  }
+
+  .course-location {
+    font-size: 9px;
+  }
+
+  .add-course-indicator {
+    width: 25px;
+    height: 25px;
+  }
+
+  .plus-icon {
+    font-size: 16px;
+  }
+}

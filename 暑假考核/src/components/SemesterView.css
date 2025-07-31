@@ -1,0 +1,168 @@
+.semester-view {
+  padding: 20px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.semester-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.semester-header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.semester-header p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.semester-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.week-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  animation: scaleIn 0.4s ease-out;
+}
+
+.week-card:hover {
+  transform: translateY(-4px);
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); */
+}
+
+.week-card.current {
+  border: 3px solid #4CAF50;
+  /* box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3); */
+}
+
+.week-card.past {
+  opacity: 0.7;
+}
+
+.week-card.future {
+  border: 1px dashed #ddd;
+}
+
+.week-number {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.week-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.week-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.preview-item {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-item:hover {
+  transform: scale(1.02);
+}
+
+.more-items {
+  padding: 6px 12px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .semester-view {
+    padding: 15px;
+  }
+
+  .semester-header h2 {
+    font-size: 24px;
+  }
+
+  .semester-header p {
+    font-size: 14px;
+  }
+
+  .semester-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .week-card {
+    padding: 16px;
+  }
+
+  .week-number {
+    font-size: 18px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .semester-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .week-card {
+    padding: 14px;
+  }
+}

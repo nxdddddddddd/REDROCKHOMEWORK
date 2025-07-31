@@ -1,0 +1,129 @@
+.course-card {
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 2px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: scaleIn 0.4s ease-out;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); */
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-card.draggable {
+  cursor: grab;
+}
+
+.course-card.draggable:active {
+  cursor: grabbing;
+}
+
+.course-content {
+  position: relative;
+  z-index: 1;
+}
+
+.course-name {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.course-teacher {
+  font-size: 10px;
+  opacity: 0.9;
+  margin-bottom: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.course-location {
+  font-size: 10px;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drag-handle {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 12px;
+  opacity: 0.6;
+  cursor: grab;
+  z-index: 2;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* 课程类型样式 */
+.course-card.course {
+  border-left: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.course-card.activity {
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  border-style: dashed;
+}
+
+/* 拖拽状态 */
+.course-card.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+  z-index: 1000;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .course-card {
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  .course-name {
+    font-size: 11px;
+  }
+
+  .course-teacher,
+  .course-location {
+    font-size: 9px;
+  }
+
+  .drag-handle {
+    font-size: 10px;
+  }
+}
+
+/* 动画效果 */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.course-card:active {
+  animation: pulse 0.2s ease-in-out;
+}
